@@ -1,6 +1,7 @@
 import { AuthenticationEntity } from 'src/authentication/entities';
 import { AbstractEntity } from 'src/common/entities';
-import { Entity, JoinColumn, OneToOne } from 'typeorm';
+import { GeolocationEntity } from 'src/geolocation/entities';
+import { Entity, JoinColumn, OneToMany, OneToOne } from 'typeorm';
 
 @Entity({ name: 'users' })
 export class UserEntity extends AbstractEntity {
@@ -11,4 +12,10 @@ export class UserEntity extends AbstractEntity {
   )
   @JoinColumn()
   public authentication: AuthenticationEntity;
+
+  @OneToMany(
+    () => GeolocationEntity,
+    (geolocation: GeolocationEntity) => geolocation.user,
+  )
+  public geolocations: GeolocationEntity[];
 }

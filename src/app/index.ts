@@ -3,6 +3,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AuthenticationModule } from 'src/authentication';
 import { DatabaseModule } from 'src/database';
+import { GeolocationModule } from 'src/geolocation';
 import { UserModule } from 'src/user';
 
 @Module({
@@ -23,6 +24,7 @@ import { UserModule } from 'src/user';
     DatabaseModule,
     AuthenticationModule,
     UserModule,
+    GeolocationModule,
   ],
 })
 export class AppModule {}

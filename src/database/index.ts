@@ -21,6 +21,9 @@ import { SnakeNamingStrategy } from './strategies';
         namingStrategy: new SnakeNamingStrategy(),
         synchronize: process.env.NODE_ENV == 'development',
         logging: process.env.NODE_ENV === 'development',
+        extra: {
+          charset: 'utf8mb4_unicode_ci',
+        },
       }),
     }),
   ],

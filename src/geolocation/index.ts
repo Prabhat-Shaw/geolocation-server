@@ -37,7 +37,6 @@ import { LocationSubscriber } from './subscribers';
     LanguageService,
     LocationSubscriber,
   ],
-  exports: [ClientService, GeolocationService],
   controllers: [GeolocationController],
 })
 export class GeolocationModule {}

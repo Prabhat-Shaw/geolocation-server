@@ -2,7 +2,6 @@ import {
   Connection,
   EntitySubscriberInterface,
   EventSubscriber,
-  InsertEvent,
 } from 'typeorm';
 import { LocationEntity } from '../entities';
 import { LanguageService } from '../services';
@@ -20,12 +19,6 @@ export class LocationSubscriber
 
   listenTo() {
     return LocationEntity;
-  }
-
-  async afterInsert({
-    entity: location,
-  }: InsertEvent<LocationEntity>): Promise<any> {
-    location.languages = await this._languageService.getLanguages({ location });
   }
 
   async afterLoad(location: LocationEntity): Promise<void> {

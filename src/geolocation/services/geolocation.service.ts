@@ -1,17 +1,14 @@
-import {
-  Injectable,
-  InternalServerErrorException,
-  NotFoundException,
-} from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { PageDto, PageMetaDto, PageOptionsDto } from 'src/common/dtos';
 import { UserEntity } from 'src/user/entities';
-import { Connection, QueryRunner } from 'typeorm';
+import { Connection, DeleteResult, QueryRunner } from 'typeorm';
 import {
   CreateGeolocationDto,
   GeolocationDto,
   RemoveGeolocationDto,
 } from '../dtos';
 import { GeolocationEntity, LanguageEntity, LocationEntity } from '../entities';
+import { GeolocationNotFoundedException } from '../exceptions';
 import { GeolocationRepository } from '../repositories';
 import { ClientService } from './client.service';
 import { LanguageService } from './language.service';
@@ -51,13 +48,13 @@ export class GeolocationService {
     return new PageDto(entities, pageMetaDto);
   }
 
-  public async createGeolocations(
+  public async createGeolocation(
     { ipAddress }: CreateGeolocationDto,
     user: UserEntity,
   ): Promise<GeolocationEntity> {
-    const data = await this._clientService.getData(ipAddress);
+    const geolocationData = await this._clientService.getData(ipAddress);
 
-    return this._saveData(data, user);
+    return this._saveData(geolocationData, user);
   }
 
   public async removeGeolocations(
@@ -67,7 +64,7 @@ export class GeolocationService {
     const geolocation = await this._getGeolocation({ uuid, user });
 
     if (!geolocation) {
-      throw new NotFoundException();
+      throw new GeolocationNotFoundedException();
     }
 
     const queryRunner = this._connection.createQueryRunner();
@@ -96,20 +93,14 @@ export class GeolocationService {
     } catch (error) {
       await queryRunner.rollbackTransaction();
 
-      //   if (error?.code === PostgresErrorCode.UniqueViolation) {
-      //     throw new BadRequestException('User with that email already exists');
-      //   }
-
       throw new InternalServerErrorException();
     } finally {
       await queryRunner.release();
     }
-
-    // return this._removeGeolocation(geolocation, queryRunner);
   }
 
   private async _getGeolocation(
-    options: Partial<{ user: UserEntity; uuid: string }>,
+    options: Partial<{ user: UserEntity; uuid: string; ip: string }>,
   ): Promise<GeolocationEntity> {
     const queryBuilder =
       this._geolocationRepository.createQueryBuilder('geolocation');
@@ -132,14 +123,20 @@ export class GeolocationService {
   private async _removeGeolocation(
     geolocation: GeolocationEntity,
     queryRunner: QueryRunner,
-  ): Promise<any> {
+  ): Promise<DeleteResult> {
     return queryRunner.manager.delete(GeolocationEntity, geolocation.id);
   }
 
   private async _saveData(
     geolocationDto: GeolocationDto,
     user: UserEntity,
-  ): Promise<GeolocationEntity> {
+  ): Promise<GeolocationEntity | any> {
+    const geolocation = await this._getGeolocation({ ip: geolocationDto.ip });
+
+    if (geolocation) {
+      return geolocation;
+    }
+
     const queryRunner = this._connection.createQueryRunner();
 
     await queryRunner.connect();
@@ -172,13 +169,13 @@ export class GeolocationService {
 
       await queryRunner.commitTransaction();
 
+      geolocation.location.languages = await this._languageService.getLanguages(
+        { location: geolocation.location },
+      );
+
       return geolocation;
     } catch (error) {
       await queryRunner.rollbackTransaction();
-
-      //   if (error?.code === PostgresErrorCode.UniqueViolation) {
-      //     throw new BadRequestException('User with that email already exists');
-      //   }
 
       throw new InternalServerErrorException();
     } finally {

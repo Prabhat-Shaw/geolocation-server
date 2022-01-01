@@ -5,7 +5,7 @@ import { LocationEntity } from './location.entity';
 
 @Entity({ name: 'geolocations' })
 export class GeolocationEntity extends AbstractEntity {
-  @Column()
+  @Column({ unique: true })
   public ip: string;
 
   @Column()

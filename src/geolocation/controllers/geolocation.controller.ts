@@ -45,11 +45,11 @@ export class GeolocationController {
     type: GeolocationDto,
     description: 'Successfully created geolocation data',
   })
-  async createGeolocations(
+  async createGeolocation(
     @Req() { user }: RequestWithUser,
     @Body() createGeolocationDto: CreateGeolocationDto,
   ): Promise<GeolocationEntity> {
-    return this._geolocationService.createGeolocations(
+    return this._geolocationService.createGeolocation(
       createGeolocationDto,
       user,
     );

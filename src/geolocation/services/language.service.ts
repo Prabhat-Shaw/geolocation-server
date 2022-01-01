@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { QueryRunner } from 'typeorm';
+import { DeleteResult, QueryRunner } from 'typeorm';
 import { LanguageDto } from '../dtos';
 import { LanguageEntity, LocationEntity } from '../entities';
 import { LanguageRepository } from '../repositories';
@@ -46,7 +46,7 @@ export class LanguageService {
   public async removeLanguage(
     language: LanguageEntity,
     queryRunner: QueryRunner,
-  ): Promise<any> {
+  ): Promise<DeleteResult> {
     return queryRunner.manager.delete(LanguageEntity, language.id);
   }
 

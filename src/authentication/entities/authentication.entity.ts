@@ -6,7 +6,7 @@ import { Column, Entity, OneToOne } from 'typeorm';
 @Entity({ name: 'authentications' })
 export class AuthenticationEntity extends AbstractEntity {
   @Column({ unique: true })
-  public emailAddress: string;
+  public email_address: string;
 
   @Column()
   @Exclude()

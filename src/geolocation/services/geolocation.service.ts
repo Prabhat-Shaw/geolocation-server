@@ -157,18 +157,14 @@ export class GeolocationService {
         ),
       ]);
 
-      await this._locationLanguageService.createLocationLanguage(
-        location,
-        languages,
-        queryRunner,
-      );
-
-      const geolocation = await this._createGeolocation(
-        geolocationDto,
-        location,
-        user,
-        queryRunner,
-      );
+      const [, geolocation] = await Promise.all([
+        this._locationLanguageService.createLocationLanguages(
+          location,
+          languages,
+          queryRunner,
+        ),
+        this._createGeolocation(geolocationDto, location, user, queryRunner),
+      ]);
 
       await queryRunner.commitTransaction();
 

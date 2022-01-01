@@ -9,23 +9,23 @@ export class PageMetaDto {
   readonly take: number;
 
   @ApiProperty()
-  readonly itemCount: number;
+  readonly item_count: number;
 
   @ApiProperty()
-  readonly pageCount: number;
+  readonly page_count: number;
 
   @ApiProperty()
-  readonly hasPreviousPage: boolean;
+  readonly has_previous_page: boolean;
 
   @ApiProperty()
-  readonly hasNextPage: boolean;
+  readonly has_next_page: boolean;
 
   constructor({ pageOptionsDto, itemCount }: PageMetaDtoParameters) {
     this.page = pageOptionsDto.page;
     this.take = pageOptionsDto.take;
-    this.itemCount = itemCount;
-    this.pageCount = Math.ceil(this.itemCount / this.take);
-    this.hasPreviousPage = this.page > 1;
-    this.hasNextPage = this.page < this.pageCount;
+    this.item_count = itemCount;
+    this.page_count = Math.ceil(this.item_count / this.take);
+    this.has_previous_page = this.page > 1;
+    this.has_next_page = this.page < this.page_count;
   }
 }

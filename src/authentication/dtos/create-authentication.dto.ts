@@ -5,7 +5,7 @@ export class CreateAuthenticationDto {
   @IsEmail()
   @IsNotEmpty()
   @ApiProperty()
-  readonly emailAddress: string;
+  readonly email_address: string;
 
   @IsString()
   @IsNotEmpty()

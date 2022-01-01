@@ -3,5 +3,5 @@ import { AbstractDto } from 'src/common/dtos';
 
 export class AuthenticationDto extends AbstractDto {
   @ApiProperty()
-  readonly emailAddress: string;
+  readonly email_address: string;
 }

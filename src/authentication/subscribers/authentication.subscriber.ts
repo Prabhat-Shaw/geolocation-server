@@ -24,8 +24,8 @@ export class AuthenticationSubscriber
       );
     }
 
-    if (entity.emailAddress) {
-      entity.emailAddress = entity.emailAddress.toLowerCase();
+    if (entity.email_address) {
+      entity.email_address = entity.email_address.toLowerCase();
     }
   }
 

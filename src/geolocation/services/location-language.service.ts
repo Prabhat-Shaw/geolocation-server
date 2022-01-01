@@ -10,7 +10,7 @@ export class LocationLanguageService {
     private readonly _locationLanguageRepository: LocationLanguageRepository,
   ) {}
 
-  public async createLocationLanguage(
+  public async createLocationLanguages(
     location: LocationEntity,
     languages: LanguageEntity[],
     queryRunner: QueryRunner,

@@ -8,17 +8,12 @@ import {
   Req,
   UseGuards,
 } from '@nestjs/common';
-import {
-  ApiBody,
-  ApiOkResponse,
-  ApiSecurity,
-  ApiTags,
-  ApiUnauthorizedResponse,
-} from '@nestjs/swagger';
+import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { UserDto } from 'src/user/dtos';
 import { UserEntity } from 'src/user/entities';
+import { Authorization } from '../decorators';
 import { LoginDto, RegistrationDto } from '../dtos';
-import { JwtAuthenticationGuard, LocalAuthenticationGuard } from '../guards';
+import { LocalAuthenticationGuard } from '../guards';
 import { RequestWithUser } from '../interfaces';
 import { AuthenticationService } from '../services';
 
@@ -38,7 +33,7 @@ export class AuthenticationController {
 
   @HttpCode(HttpStatus.OK)
   @UseGuards(LocalAuthenticationGuard)
-  @Post('log-in')
+  @Post('login')
   @ApiOkResponse({ type: UserDto, description: 'Successfully logged' })
   @ApiBody({ type: LoginDto })
   async login(@Req() request: RequestWithUser): Promise<UserEntity> {
@@ -49,11 +44,9 @@ export class AuthenticationController {
     return request.user;
   }
 
-  @UseGuards(JwtAuthenticationGuard)
   @HttpCode(HttpStatus.NO_CONTENT)
-  @Get('log-out')
-  @ApiSecurity('Authentication')
-  @ApiUnauthorizedResponse({ description: 'Unauthorized' })
+  @Get('logout')
+  @Authorization()
   logout(@Req() request: RequestWithUser): void {
     request.res.setHeader(
       'Set-Cookie',

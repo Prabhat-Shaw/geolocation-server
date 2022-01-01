@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { QueryRunner } from 'typeorm';
+import { DeleteResult, QueryRunner } from 'typeorm';
 import { LocationDto } from '../dtos';
 import { LocationEntity } from '../entities';
 import { LocationRepository } from '../repositories';
@@ -42,7 +42,7 @@ export class LocationService {
   public async removeLocation(
     location: LocationEntity,
     queryRunner: QueryRunner,
-  ): Promise<void> {
-    await queryRunner.manager.delete(LocationEntity, location.id);
+  ): Promise<DeleteResult> {
+    return queryRunner.manager.delete(LocationEntity, location.id);
   }
 }

@@ -29,7 +29,7 @@ export class UserService {
     }
 
     if (options.emailAddress) {
-      queryBuilder.andWhere('authentication.emailAddress = :emailAddress', {
+      queryBuilder.andWhere('authentication.email_address = :emailAddress', {
         emailAddress: options.emailAddress,
       });
     }

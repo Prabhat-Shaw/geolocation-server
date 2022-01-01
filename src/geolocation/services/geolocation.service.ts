@@ -52,10 +52,10 @@ export class GeolocationService {
   }
 
   public async createGeolocation(
-    { ipAddress }: CreateGeolocationDto,
+    { ip_address }: CreateGeolocationDto,
     user: UserEntity,
   ): Promise<GeolocationEntity> {
-    const geolocationData = await this._clientService.getData(ipAddress);
+    const geolocationData = await this._clientService.getData(ip_address);
 
     return this._saveData(geolocationData, user);
   }

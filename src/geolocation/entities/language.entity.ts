@@ -4,7 +4,7 @@ import { LocationLanguageEntity } from './location-language.entity';
 
 @Entity({ name: 'languages' })
 export class LanguageEntity extends AbstractEntity {
-  @Column()
+  @Column({ unique: true })
   public code: string;
 
   @Column()
@@ -15,7 +15,7 @@ export class LanguageEntity extends AbstractEntity {
 
   @OneToMany(
     () => LocationLanguageEntity,
-    (locationLanguage: LocationLanguageEntity) => locationLanguage.language,
+    (location_language: LocationLanguageEntity) => location_language.language,
   )
-  public locationLanguages: LocationLanguageEntity[];
+  public location_languages: LocationLanguageEntity[];
 }

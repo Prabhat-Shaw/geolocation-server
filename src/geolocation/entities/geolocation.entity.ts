@@ -9,22 +9,19 @@ export class GeolocationEntity extends AbstractEntity {
   public ip: string;
 
   @Column()
-  public hostname: string;
-
-  @Column()
   public type: string;
 
   @Column()
-  public continentCode: string;
+  public continent_code: string;
 
   @Column()
-  public continentName: string;
+  public continent_name: string;
 
   @Column()
-  public regionCode: string;
+  public region_code: string;
 
   @Column()
-  public regionName: string;
+  public region_name: string;
 
   @Column()
   public city: string;
@@ -41,41 +38,14 @@ export class GeolocationEntity extends AbstractEntity {
   @ManyToOne(
     () => LocationEntity,
     (location: LocationEntity) => location.geolocations,
-    { eager: true, nullable: false },
+    { eager: true, nullable: false, onDelete: 'CASCADE' },
   )
   public location: LocationEntity;
 
   @ManyToOne(() => UserEntity, (user: UserEntity) => user.geolocations, {
     eager: true,
     nullable: false,
+    onDelete: 'CASCADE',
   })
   public user: UserEntity;
-
-  // @ManyToOne(
-  //   () => TimeZoneEntity,
-  //   (timeZone: TimeZoneEntity) => timeZone.geolocations,
-  //   { eager: true, nullable: false },
-  // )
-  // public timeZone: TimeZoneEntity;
-
-  // @ManyToOne(
-  //   () => CurrencyEntity,
-  //   (currency: CurrencyEntity) => currency.geolocations,
-  //   { eager: true, nullable: false },
-  // )
-  // public currency: CurrencyEntity;
-
-  // @ManyToOne(
-  //   () => ConnectionEntity,
-  //   (connection: ConnectionEntity) => connection.geolocations,
-  //   { eager: true, nullable: false },
-  // )
-  // public connection: ConnectionEntity;
-
-  // @ManyToOne(
-  //   () => SecurityEntity,
-  //   (security: SecurityEntity) => security.geolocations,
-  //   { eager: true, nullable: false },
-  // )
-  // public security: SecurityEntity;
 }

@@ -1,40 +1,43 @@
 import { AbstractEntity } from 'src/common/entities';
 import { Column, Entity, OneToMany } from 'typeorm';
+import { LanguageEntity } from '.';
 import { GeolocationEntity } from './geolocation.entity';
 import { LocationLanguageEntity } from './location-language.entity';
 
 @Entity({ name: 'locations' })
 export class LocationEntity extends AbstractEntity {
-  @Column()
-  public geonameId: number;
+  @Column({ unique: true })
+  public geoname_id: number;
 
   @Column()
   public capital: string;
 
   @OneToMany(
     () => LocationLanguageEntity,
-    (locationLanguage: LocationLanguageEntity) => locationLanguage.language,
+    (location_language: LocationLanguageEntity) => location_language.language,
   )
-  public locationLanguages: LocationLanguageEntity[];
+  public location_languages: LocationLanguageEntity[];
 
   @Column()
-  public countryFlag: string;
+  public country_flag: string;
 
   @Column()
-  public countryFlagEmoji: string;
+  public country_flag_emoji: string;
 
   @Column()
-  public countryFlagEmojiUnicode: string;
+  public country_flag_emoji_unicode: string;
 
   @Column()
-  public callingCode: string;
+  public calling_code: string;
 
   @Column()
-  public isEu: boolean;
+  public is_eu: boolean;
 
   @OneToMany(
     () => GeolocationEntity,
     (geolocation: GeolocationEntity) => geolocation.location,
   )
   public geolocations: GeolocationEntity[];
+
+  public languages: LanguageEntity[];
 }

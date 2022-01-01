@@ -8,7 +8,10 @@ import {
   RemoveGeolocationDto,
 } from '../dtos';
 import { GeolocationEntity, LanguageEntity, LocationEntity } from '../entities';
-import { GeolocationNotFoundedException } from '../exceptions';
+import {
+  GeolocationNotFoundedException,
+  GeolocationWasCreatedException,
+} from '../exceptions';
 import { GeolocationRepository } from '../repositories';
 import { ClientService } from './client.service';
 import { LanguageService } from './language.service';
@@ -134,7 +137,7 @@ export class GeolocationService {
     const geolocation = await this._getGeolocation({ ip: geolocationDto.ip });
 
     if (geolocation) {
-      return geolocation;
+      throw new GeolocationWasCreatedException();
     }
 
     const queryRunner = this._connection.createQueryRunner();

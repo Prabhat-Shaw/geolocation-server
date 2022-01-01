@@ -70,8 +70,8 @@ export class GeolocationService {
       throw new GeolocationNotFoundedException();
     }
 
-    const queryRunner = this._connection.createQueryRunner();
     const promiseArray = [];
+    const queryRunner = this._connection.createQueryRunner();
 
     await queryRunner.connect();
     await queryRunner.startTransaction();
@@ -120,6 +120,10 @@ export class GeolocationService {
       });
     }
 
+    if (options.ip) {
+      queryBuilder.andWhere('geolocation.ip = :ip', { ip: options.ip });
+    }
+
     return queryBuilder.getOne();
   }
 
@@ -133,7 +137,7 @@ export class GeolocationService {
   private async _saveData(
     geolocationDto: GeolocationDto,
     user: UserEntity,
-  ): Promise<GeolocationEntity | any> {
+  ): Promise<GeolocationEntity> {
     const geolocation = await this._getGeolocation({ ip: geolocationDto.ip });
 
     if (geolocation) {

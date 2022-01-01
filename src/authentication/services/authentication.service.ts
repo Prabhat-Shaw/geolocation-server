@@ -73,26 +73,6 @@ export class AuthenticationService {
     ];
   }
 
-  private async _createAuthentication(
-    createAuthenticationDto: CreateAuthenticationDto,
-    queryRunner: QueryRunner,
-  ): Promise<AuthenticationEntity> {
-    const authentication = this._authenticationRepository.create(
-      createAuthenticationDto,
-    );
-
-    return queryRunner.manager.save(authentication);
-  }
-
-  private _getCookieWithJwtToken(uuid: string): string {
-    const payload: TokenPayload = { uuid };
-    const token = this._jwtService.sign(payload);
-
-    return `Authentication=${token}; HttpOnly; Path=/; Max-Age=${this._configService.get(
-      'JWT_EXPIRATION_TIME',
-    )}`;
-  }
-
   public async getAuthenticatedUser(
     emailAddress: string,
     plainTextPassword: string,
@@ -116,5 +96,25 @@ export class AuthenticationService {
     }
 
     return user;
+  }
+
+  private async _createAuthentication(
+    createAuthenticationDto: CreateAuthenticationDto,
+    queryRunner: QueryRunner,
+  ): Promise<AuthenticationEntity> {
+    const authentication = this._authenticationRepository.create(
+      createAuthenticationDto,
+    );
+
+    return queryRunner.manager.save(authentication);
+  }
+
+  private _getCookieWithJwtToken(uuid: string): string {
+    const payload: TokenPayload = { uuid };
+    const token = this._jwtService.sign(payload);
+
+    return `Authentication=${token}; HttpOnly; Path=/; Max-Age=${this._configService.get(
+      'JWT_EXPIRATION_TIME',
+    )}`;
   }
 }

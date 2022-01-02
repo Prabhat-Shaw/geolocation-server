@@ -1,3 +1,4 @@
+export * from './cache.service';
 export * from './client.service';
 export * from './geolocation.service';
 export * from './language.service';

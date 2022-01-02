@@ -1,5 +1,5 @@
 import { HttpModule } from '@nestjs/axios';
-import { Module } from '@nestjs/common';
+import { CacheModule, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { GeolocationController } from './controllers';
@@ -10,18 +10,20 @@ import {
   LocationRepository,
 } from './repositories';
 import {
+  CacheService,
   ClientService,
   GeolocationService,
   LanguageService,
   LocationLanguageService,
   LocationService,
 } from './services';
-import { LocationSubscriber } from './subscribers';
+import { GeolocationSubscriber, LocationSubscriber } from './subscribers';
 
 @Module({
   imports: [
     HttpModule,
     ConfigModule,
+    CacheModule.register(),
     TypeOrmModule.forFeature([
       GeolocationRepository,
       LocationLanguageRepository,
@@ -35,7 +37,9 @@ import { LocationSubscriber } from './subscribers';
     LocationLanguageService,
     LocationService,
     LanguageService,
+    CacheService,
     LocationSubscriber,
+    GeolocationSubscriber,
   ],
   controllers: [GeolocationController],
 })

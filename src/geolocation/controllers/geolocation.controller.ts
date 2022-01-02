@@ -1,5 +1,6 @@
 import {
   Body,
+  CacheKey,
   Controller,
   Delete,
   Get,
@@ -9,12 +10,15 @@ import {
   Post,
   Query,
   Req,
+  UseInterceptors,
 } from '@nestjs/common';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { Authorization } from 'src/authentication/decorators';
 import { RequestWithUser } from 'src/authentication/interfaces';
 import { ApiPaginatedResponse } from 'src/common/decorators';
 import { PageDto, PageOptionsDto } from 'src/common/dtos';
+import { HttpCacheInterceptor } from 'src/common/interceptors';
+import { GET_GEOLOCATION_CACHE_KEY } from '../constants';
 import {
   CreateGeolocationDto,
   GeolocationDto,
@@ -30,6 +34,8 @@ export class GeolocationController {
 
   @Get()
   @HttpCode(HttpStatus.OK)
+  @UseInterceptors(HttpCacheInterceptor)
+  @CacheKey(GET_GEOLOCATION_CACHE_KEY)
   @Authorization()
   @ApiPaginatedResponse(GeolocationDto)
   async getGeolocations(

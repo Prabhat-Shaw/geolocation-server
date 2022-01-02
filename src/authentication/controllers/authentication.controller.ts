@@ -37,7 +37,9 @@ export class AuthenticationController {
   @ApiOkResponse({ type: UserDto, description: 'Successfully logged' })
   @ApiBody({ type: LoginDto })
   async login(@Req() request: RequestWithUser): Promise<UserEntity> {
-    const accessTokenCookie = this._authenticationService.login(request.user);
+    const accessTokenCookie = this._authenticationService.getCookieWithJwtToken(
+      request.user.uuid,
+    );
 
     request.res.setHeader('Set-Cookie', accessTokenCookie);
 

@@ -62,8 +62,13 @@ export class AuthenticationService {
     }
   }
 
-  public login({ uuid }: UserEntity): string {
-    return this._getCookieWithJwtToken(uuid);
+  public getCookieWithJwtToken(uuid: string): string {
+    const payload: TokenPayload = { uuid };
+    const token = this._jwtService.sign(payload);
+
+    return `Authentication=${token}; HttpOnly; Path=/; Max-Age=${this._configService.get(
+      'JWT_EXPIRATION_TIME',
+    )}`;
   }
 
   public getCookiesForLogout(): string[] {
@@ -107,14 +112,5 @@ export class AuthenticationService {
     );
 
     return queryRunner.manager.save(authentication);
-  }
-
-  private _getCookieWithJwtToken(uuid: string): string {
-    const payload: TokenPayload = { uuid };
-    const token = this._jwtService.sign(payload);
-
-    return `Authentication=${token}; HttpOnly; Path=/; Max-Age=${this._configService.get(
-      'JWT_EXPIRATION_TIME',
-    )}`;
   }
 }

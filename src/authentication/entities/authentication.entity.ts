@@ -13,5 +13,6 @@ export class AuthenticationEntity extends AbstractEntity {
   public password: string;
 
   @OneToOne(() => UserEntity, (user: UserEntity) => user.authentication)
+  @Exclude()
   public user: UserEntity;
 }

@@ -22,6 +22,25 @@
 - You can create a registration form but using hardcoded values for authorisation is also acceptable (just make sure that API is secured by JWT token) ✅
 - Specs, serializers and docker are always welcome! ✅
 
+## Installation
+
+```bash
+# 1. Clone the application repository
+git clone https://github.com/pietrzakadrian/nestjs-sofomo
+
+# 2. Enter the application directory
+cd nestjs-sofomo
+
+# 3. Install required npm packages
+yarn
+
+# 4. Build the required dependencies
+docker-compose up
+
+# 5. Run application
+yarn start
+```
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.

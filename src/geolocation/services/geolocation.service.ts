@@ -9,7 +9,7 @@ import {
 } from '../dtos';
 import { GeolocationEntity, LanguageEntity, LocationEntity } from '../entities';
 import {
-  GeolocationNotFoundedException,
+  GeolocationNotSpecifiedException,
   GeolocationWasCreatedException,
 } from '../exceptions';
 import { GeolocationRepository } from '../repositories';
@@ -67,28 +67,28 @@ export class GeolocationService {
     const geolocation = await this._getGeolocation({ uuid, user });
 
     if (!geolocation) {
-      throw new GeolocationNotFoundedException();
+      throw new GeolocationNotSpecifiedException();
     }
 
-    const promiseArray = [];
     const queryRunner = this._connection.createQueryRunner();
 
     await queryRunner.connect();
     await queryRunner.startTransaction();
 
     try {
+      const promiseArray = [];
+
       geolocation.location.languages.forEach((language: LanguageEntity) =>
         promiseArray.push(
           this._languageService.removeLanguage(language, queryRunner),
         ),
       );
 
-      promiseArray.push(
+      await Promise.all([
+        ...promiseArray,
         this._removeGeolocation(geolocation, queryRunner),
         this._locationService.removeLocation(geolocation.location, queryRunner),
-      );
-
-      await Promise.all(promiseArray);
+      ]);
 
       await queryRunner.commitTransaction();
 

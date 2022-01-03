@@ -13,9 +13,9 @@ import {
 } from 'src/util/mocks';
 import * as request from 'supertest';
 import { Connection } from 'typeorm';
+import { AuthenticationController } from '../controllers/authentication.controller';
 import { AuthenticationRepository } from '../repositories';
 import { AuthenticationService } from '../services/authentication.service';
-import { AuthenticationController } from './authentication.controller';
 
 describe('AuthenticationController', () => {
   let app: INestApplication;

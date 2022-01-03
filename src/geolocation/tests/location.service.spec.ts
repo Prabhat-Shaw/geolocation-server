@@ -1,7 +1,7 @@
 import { Test } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { LocationRepository } from '../repositories';
-import { LocationService } from './location.service';
+import { LocationService } from '../services/location.service';
 
 describe('LocationService', () => {
   let locationService: LocationService;

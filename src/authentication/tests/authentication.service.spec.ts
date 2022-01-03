@@ -13,7 +13,7 @@ import {
 } from 'src/util/mocks';
 import { Connection } from 'typeorm';
 import { AuthenticationRepository } from '../repositories';
-import { AuthenticationService } from './authentication.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 jest.mock('bcrypt');
 

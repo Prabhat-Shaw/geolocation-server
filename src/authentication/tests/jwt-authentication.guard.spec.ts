@@ -1,4 +1,4 @@
-import { JwtAuthenticationGuard } from './jwt-authentication.guard';
+import { JwtAuthenticationGuard } from '../guards/jwt-authentication.guard';
 
 describe('JwtAuthenticationGuard', () => {
   let guard: JwtAuthenticationGuard;

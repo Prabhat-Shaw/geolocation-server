@@ -1,7 +1,7 @@
 import { Test } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { LocationLanguageService } from '.';
 import { LocationLanguageRepository } from '../repositories';
+import { LocationLanguageService } from '../services';
 
 describe('LocationLanguageService', () => {
   let locationLanguageService: LocationLanguageService;

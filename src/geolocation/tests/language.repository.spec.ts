@@ -1,25 +1,25 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { GeolocationEntity } from '../entities';
-import { GeolocationRepository } from './geolocation.repository';
+import { LanguageEntity } from '../entities';
+import { LanguageRepository } from '../repositories/language.repository';
 
-describe('GeolocationRepository', () => {
+describe('LanguageRepository', () => {
   let app: TestingModule;
-  let repository: Repository<GeolocationEntity>;
+  let repository: Repository<LanguageEntity>;
 
   beforeEach(async () => {
     app = await Test.createTestingModule({
       providers: [
         {
-          provide: getRepositoryToken(GeolocationRepository),
+          provide: getRepositoryToken(LanguageRepository),
           useClass: Repository,
         },
       ],
     }).compile();
 
-    repository = app.get<Repository<GeolocationEntity>>(
-      getRepositoryToken(GeolocationRepository),
+    repository = app.get<Repository<LanguageEntity>>(
+      getRepositoryToken(LanguageRepository),
     );
   });
 

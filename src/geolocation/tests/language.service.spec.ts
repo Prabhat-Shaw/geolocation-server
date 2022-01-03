@@ -1,7 +1,7 @@
 import { Test } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { LanguageRepository } from '../repositories';
-import { LanguageService } from './language.service';
+import { LanguageService } from '../services';
 
 describe('LanguageService', () => {
   let languageService: LanguageService;

@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { AuthenticationEntity } from '../entities';
-import { AuthenticationRepository } from './authentication.repository';
+import { AuthenticationRepository } from '../repositories/authentication.repository';
 
 describe('AuthenticationRepository', () => {
   let app: TestingModule;

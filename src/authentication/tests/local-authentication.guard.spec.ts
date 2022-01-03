@@ -1,4 +1,4 @@
-import { LocalAuthenticationGuard } from './local-authentication.guard';
+import { LocalAuthenticationGuard } from '../guards/local-authentication.guard';
 
 describe('LocalAuthenticationGuard', () => {
   let guard: LocalAuthenticationGuard;

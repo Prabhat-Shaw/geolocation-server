@@ -1,25 +1,25 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { LocationEntity } from '../entities';
-import { LocationRepository } from './location.repository';
+import { UserEntity } from '../entities';
+import { UserRepository } from '../repositories/user.repository';
 
-describe('LocationRepository', () => {
+describe('UserRepository', () => {
   let app: TestingModule;
-  let repository: Repository<LocationEntity>;
+  let repository: Repository<UserEntity>;
 
   beforeEach(async () => {
     app = await Test.createTestingModule({
       providers: [
         {
-          provide: getRepositoryToken(LocationRepository),
+          provide: getRepositoryToken(UserRepository),
           useClass: Repository,
         },
       ],
     }).compile();
 
-    repository = app.get<Repository<LocationEntity>>(
-      getRepositoryToken(LocationRepository),
+    repository = app.get<Repository<UserEntity>>(
+      getRepositoryToken(UserRepository),
     );
   });
 

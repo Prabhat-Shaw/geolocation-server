@@ -1,9 +1,4 @@
 import { HttpModule } from '@nestjs/axios';
-import {
-  CACHE_MANAGER,
-  INestApplication,
-  ValidationPipe,
-} from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Test } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
@@ -16,37 +11,28 @@ import {
   LocationRepository,
 } from '../repositories';
 import {
-  CacheService,
   ClientService,
   GeolocationService,
   LanguageService,
   LocationLanguageService,
   LocationService,
 } from '../services';
-import { GeolocationController } from './geolocation.controller';
 
-describe('GeolocationController', () => {
-  let app: INestApplication;
-  let geolocationController: GeolocationController;
+describe('GeolocationService', () => {
+  let geolocationService: GeolocationService;
 
   beforeEach(async () => {
     const module = await Test.createTestingModule({
       imports: [HttpModule],
-      controllers: [GeolocationController],
       providers: [
-        ClientService,
         GeolocationService,
-        LocationLanguageService,
-        LocationService,
+        ClientService,
         LanguageService,
-        CacheService,
+        LocationService,
+        LocationLanguageService,
         ConfigService,
         {
           provide: getRepositoryToken(GeolocationRepository),
-          useValue: {},
-        },
-        {
-          provide: getRepositoryToken(LocationLanguageRepository),
           useValue: {},
         },
         {
@@ -58,27 +44,20 @@ describe('GeolocationController', () => {
           useValue: {},
         },
         {
-          provide: Connection,
-          useValue: mockedConnection,
+          provide: getRepositoryToken(LocationLanguageRepository),
+          useValue: {},
         },
         {
-          provide: CACHE_MANAGER,
-          useValue: {},
+          provide: Connection,
+          useValue: mockedConnection,
         },
       ],
     }).compile();
 
-    app = module.createNestApplication();
-
-    app.useGlobalPipes(new ValidationPipe({ transform: true }));
-    await app.init();
-
-    geolocationController = module.get<GeolocationController>(
-      GeolocationController,
-    );
+    geolocationService = module.get<GeolocationService>(GeolocationService);
   });
 
   it('should be defined', () => {
-    expect(geolocationController).toBeDefined();
+    expect(geolocationService).toBeDefined();
   });
 });

@@ -2,7 +2,7 @@
 
 ## Technology stack
 
-TypeScript, Node.js, Nest.js, RESTful API, TypeORM, PostgreSQL, Swagger, Docker
+- TypeScript, Node.js, Nest.js, RESTful API, TypeORM, PostgreSQL, Jest, Swagger, Docker
 
 ## Application specification
 

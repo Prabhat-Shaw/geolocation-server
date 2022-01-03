@@ -27,10 +27,13 @@ cd nestjs-sofomo
 # 3. Install required npm packages
 yarn
 
-# 4. Build the required dependencies
+# 4. Edit the environment variables
+cp .env.example .env
+
+# 5. Build the required dependencies
 docker-compose up
 
-# 5. Run application
+# 6. Run application
 yarn start
 ```
 

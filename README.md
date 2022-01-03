@@ -1,15 +1,8 @@
 # Geolocation Server
 
-## Backend technology stack:
+## Technology stack
 
-- TypeScript
-- Node.js
-- Nest.js
-- RESTful API
-- TypeORM
-- PostgreSQL
-- Swagger
-- Docker
+TypeScript, Node.js, Nest.js, RESTful API, TypeORM, PostgreSQL, Swagger, Docker
 
 ## Application specification
 

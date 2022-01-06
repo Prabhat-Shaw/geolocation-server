@@ -15,20 +15,20 @@ export class ClientService {
   ) {}
 
   public async getData(ipAddress: string): Promise<GeolocationDto> {
-    //todo
-    const data: any = await this._handleData(ipAddress);
+    const data = await this._handleData(ipAddress);
 
-    if (data?.error?.code === 104) {
+    if ((data as ErrorResponseDto)?.error?.code === 104) {
       throw new MonthlyLimitReachedException();
     }
 
-    return data;
+    return data as GeolocationDto;
   }
 
   private async _handleData(
     ipAddress: string,
   ): Promise<GeolocationDto | ErrorResponseDto> {
     const observable = this._fetchData(ipAddress);
+
     return lastValueFrom(observable);
   }
 

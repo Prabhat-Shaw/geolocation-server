@@ -1,14 +1,15 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { PageDto, PageMetaDto, PageOptionsDto } from 'src/common/dtos';
 import { UserEntity } from 'src/user/entities';
-import { Connection, DeleteResult, QueryRunner } from 'typeorm';
+import { Connection, DeleteResult } from 'typeorm';
 import {
   CreateGeolocationDto,
   GeolocationDto,
   RemoveGeolocationDto,
 } from '../dtos';
-import { GeolocationEntity, LanguageEntity, LocationEntity } from '../entities';
+import { GeolocationEntity, LocationEntity } from '../entities';
 import {
+  GeolocationNotFoundedException,
   GeolocationNotSpecifiedException,
   GeolocationWasCreatedException,
 } from '../exceptions';
@@ -57,8 +58,6 @@ export class GeolocationService {
   ): Promise<GeolocationEntity> {
     const geolocationData = await this._clientService.getData(ip_address);
 
-    console.log(geolocationData);
-
     return this._saveData(geolocationData, user);
   }
 
@@ -72,36 +71,9 @@ export class GeolocationService {
       throw new GeolocationNotSpecifiedException();
     }
 
-    const queryRunner = this._connection.createQueryRunner();
+    await this._removeGeolocation(geolocation);
 
-    await queryRunner.connect();
-    await queryRunner.startTransaction();
-
-    try {
-      const promiseArray = [];
-
-      geolocation.location.languages.forEach((language: LanguageEntity) =>
-        promiseArray.push(
-          this._languageService.removeLanguage(language, queryRunner),
-        ),
-      );
-
-      await Promise.all([
-        ...promiseArray,
-        this._removeGeolocation(geolocation, queryRunner),
-        this._locationService.removeLocation(geolocation.location, queryRunner),
-      ]);
-
-      await queryRunner.commitTransaction();
-
-      return geolocation;
-    } catch (error) {
-      await queryRunner.rollbackTransaction();
-
-      throw new InternalServerErrorException();
-    } finally {
-      await queryRunner.release();
-    }
+    return geolocation;
   }
 
   private async _getGeolocation(
@@ -129,11 +101,16 @@ export class GeolocationService {
     return queryBuilder.getOne();
   }
 
-  private async _removeGeolocation(
-    geolocation: GeolocationEntity,
-    queryRunner: QueryRunner,
-  ): Promise<DeleteResult> {
-    return queryRunner.manager.delete(GeolocationEntity, geolocation.id);
+  private async _removeGeolocation({
+    id,
+  }: GeolocationEntity): Promise<DeleteResult> {
+    const deleteResponse = await this._geolocationRepository.delete(id);
+
+    if (!deleteResponse.affected) {
+      throw new GeolocationNotFoundedException();
+    }
+
+    return deleteResponse;
   }
 
   private async _saveData(

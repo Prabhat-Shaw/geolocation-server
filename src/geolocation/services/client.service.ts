@@ -2,7 +2,8 @@ import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { lastValueFrom, map, Observable } from 'rxjs';
-import { GeolocationDto } from '../dtos';
+import { ErrorResponseDto, GeolocationDto } from '../dtos';
+import { MonthlyLimitReachedException } from '../exceptions';
 
 @Injectable()
 export class ClientService {
@@ -14,16 +15,26 @@ export class ClientService {
   ) {}
 
   public async getData(ipAddress: string): Promise<GeolocationDto> {
-    return this._handleData(ipAddress);
+    //todo
+    const data: any = await this._handleData(ipAddress);
+
+    if (data?.error?.code === 104) {
+      throw new MonthlyLimitReachedException();
+    }
+
+    return data;
   }
 
-  private async _handleData(ipAddress: string): Promise<GeolocationDto> {
+  private async _handleData(
+    ipAddress: string,
+  ): Promise<GeolocationDto | ErrorResponseDto> {
     const observable = this._fetchData(ipAddress);
-
     return lastValueFrom(observable);
   }
 
-  private _fetchData(ipAddress: string): Observable<GeolocationDto> {
+  private _fetchData(
+    ipAddress: string,
+  ): Observable<GeolocationDto | ErrorResponseDto> {
     const API_URL = `${
       this._API_IPSTACK_URL
     }${ipAddress}?access_key=${this._configService.get('IPSTACK_ACCESS_KEY')}`;

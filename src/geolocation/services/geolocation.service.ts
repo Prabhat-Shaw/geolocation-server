@@ -57,6 +57,8 @@ export class GeolocationService {
   ): Promise<GeolocationEntity> {
     const geolocationData = await this._clientService.getData(ip_address);
 
+    console.log(geolocationData);
+
     return this._saveData(geolocationData, user);
   }
 

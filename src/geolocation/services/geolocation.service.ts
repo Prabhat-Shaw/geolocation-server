@@ -1,7 +1,7 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { PageDto, PageMetaDto, PageOptionsDto } from 'src/common/dtos';
 import { UserEntity } from 'src/user/entities';
-import { Connection, DeleteResult } from 'typeorm';
+import { Connection, DeleteResult, QueryRunner } from 'typeorm';
 import {
   CreateGeolocationDto,
   GeolocationDto,

@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { AbstractDto } from 'src/common/dtos';
 
-export class LanguageDto {
+export class LanguageDto extends AbstractDto {
   @ApiProperty()
   readonly code: string;
 

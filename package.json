@@ -1,9 +1,8 @@
 {
   "name": "geolocation-server",
   "author": "pietrzakadrian",
-  "private": true,
   "version": "1.0.0",
-  "description": "Nest TypeScript starter repository",
+  "description": "geolocation-server",
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",

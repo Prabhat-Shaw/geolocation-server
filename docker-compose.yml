@@ -1,6 +1,21 @@
 version: '3'
 
 services:
+  app:
+    env_file:
+      - .env
+    container_name: geolocation-server
+    restart: always
+    build: .
+    ports:
+      - '$PORT:$PORT'
+    depends_on:
+      - postgres
+    links:
+      - postgres
+    networks:
+      - postgres
+
   postgres:
     container_name: postgres
     image: postgres:latest
@@ -8,20 +23,6 @@ services:
       - '5432:5432'
     volumes:
       - /data/postgres:/data/postgres
-    env_file:
-      - .env
-    networks:
-      - postgres
-
-  pgadmin:
-    links:
-      - postgres:postgres
-    container_name: pgadmin
-    image: dpage/pgadmin4
-    ports:
-      - '8080:80'
-    volumes:
-      - /data/pgadmin:/root/.pgadmin
     env_file:
       - .env
     networks:

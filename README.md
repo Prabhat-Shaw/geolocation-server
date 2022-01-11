@@ -17,12 +17,30 @@
 
 ## Installation
 
+- the first option using the docker
+
 ```bash
 # 1. Clone the application repository
-git clone https://github.com/pietrzakadrian/nestjs-sofomo
+git clone https://github.com/pietrzakadrian/geolocation-server
 
 # 2. Enter the application directory
-cd nestjs-sofomo
+cd geolocation-server
+
+# 3. Edit the environment variables
+cp .env.example .env
+
+# 4 Create an image
+docker-compose up
+```
+
+- the second option using the yarn package manager
+
+```bash
+# 1. Clone the application repository
+git clone https://github.com/pietrzakadrian/geolocation-server
+
+# 2. Enter the application directory
+cd geolocation-server
 
 # 3. Install required npm packages
 yarn
@@ -36,6 +54,16 @@ docker-compose up
 # 6. Run application
 yarn start
 ```
+
+## Documentation
+
+- documentation is available at URL `/documentation`.
+
+## Processes that can be improved
+
+- shared memory cache using redis
+- jwt refresh token
+- full source code test coverage
 
 ## License
 

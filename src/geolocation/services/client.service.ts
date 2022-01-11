@@ -1,9 +1,12 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { lastValueFrom, map, Observable } from 'rxjs';
 import { ErrorResponseDto, GeolocationDto } from '../dtos';
-import { MonthlyLimitReachedException } from '../exceptions';
+import {
+  InvalidIpAddressException,
+  MonthlyLimitReachedException,
+} from '../exceptions';
 
 @Injectable()
 export class ClientService {
@@ -17,8 +20,20 @@ export class ClientService {
   public async getData(ipAddress: string): Promise<GeolocationDto> {
     const data = await this._handleData(ipAddress);
 
-    if ((data as ErrorResponseDto)?.error?.code === 104) {
-      throw new MonthlyLimitReachedException();
+    if ((data as ErrorResponseDto)?.success === false) {
+      switch ((data as ErrorResponseDto)?.error?.code) {
+        case 106: {
+          throw new InvalidIpAddressException();
+        }
+
+        case 104: {
+          throw new MonthlyLimitReachedException();
+        }
+
+        default: {
+          throw new InternalServerErrorException();
+        }
+      }
     }
 
     return data as GeolocationDto;

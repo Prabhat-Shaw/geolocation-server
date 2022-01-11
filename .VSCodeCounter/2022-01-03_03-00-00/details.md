@@ -1,0 +1,136 @@
+# Details
+
+Date : 2022-01-03 03:00:00
+
+Directory /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src
+
+Total : 121 files,  2254 codes, 6 comments, 476 blanks, all 2736 lines
+
+[summary](results.md)
+
+## Files
+| filename | language | code | comment | blank | total |
+| :--- | :--- | ---: | ---: | ---: | ---: |
+| [src/app/index.ts](/src/app/index.ts) | TypeScript | 31 | 0 | 2 | 33 |
+| [src/authentication/controllers/authentication.controller.spec.ts](/src/authentication/controllers/authentication.controller.spec.ts) | TypeScript | 72 | 0 | 8 | 80 |
+| [src/authentication/controllers/authentication.controller.ts](/src/authentication/controllers/authentication.controller.ts) | TypeScript | 52 | 0 | 7 | 59 |
+| [src/authentication/controllers/index.ts](/src/authentication/controllers/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/authentication/decorators/authorization.decorator.ts](/src/authentication/decorators/authorization.decorator.ts) | TypeScript | 10 | 0 | 2 | 12 |
+| [src/authentication/decorators/index.ts](/src/authentication/decorators/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/authentication/dtos/authentication.dto.ts](/src/authentication/dtos/authentication.dto.ts) | TypeScript | 6 | 0 | 2 | 8 |
+| [src/authentication/dtos/create-authentication.dto.ts](/src/authentication/dtos/create-authentication.dto.ts) | TypeScript | 13 | 0 | 3 | 16 |
+| [src/authentication/dtos/index.ts](/src/authentication/dtos/index.ts) | TypeScript | 4 | 0 | 1 | 5 |
+| [src/authentication/dtos/login.dto.ts](/src/authentication/dtos/login.dto.ts) | TypeScript | 2 | 0 | 2 | 4 |
+| [src/authentication/dtos/registration.dto.ts](/src/authentication/dtos/registration.dto.ts) | TypeScript | 2 | 0 | 2 | 4 |
+| [src/authentication/entities/authentication.entity.ts](/src/authentication/entities/authentication.entity.ts) | TypeScript | 15 | 0 | 4 | 19 |
+| [src/authentication/entities/index.ts](/src/authentication/entities/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/authentication/exceptions/index.ts](/src/authentication/exceptions/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/authentication/exceptions/wrong-credentials-provided.exception.ts](/src/authentication/exceptions/wrong-credentials-provided.exception.ts) | TypeScript | 6 | 0 | 2 | 8 |
+| [src/authentication/guards/index.ts](/src/authentication/guards/index.ts) | TypeScript | 2 | 0 | 1 | 3 |
+| [src/authentication/guards/jwt-authentication.guard.spec.ts](/src/authentication/guards/jwt-authentication.guard.spec.ts) | TypeScript | 10 | 0 | 4 | 14 |
+| [src/authentication/guards/jwt-authentication.guard.ts](/src/authentication/guards/jwt-authentication.guard.ts) | TypeScript | 4 | 0 | 2 | 6 |
+| [src/authentication/guards/local-authentication.guard.spec.ts](/src/authentication/guards/local-authentication.guard.spec.ts) | TypeScript | 10 | 0 | 4 | 14 |
+| [src/authentication/guards/local-authentication.guard.ts](/src/authentication/guards/local-authentication.guard.ts) | TypeScript | 4 | 0 | 2 | 6 |
+| [src/authentication/index.ts](/src/authentication/index.ts) | TypeScript | 32 | 0 | 2 | 34 |
+| [src/authentication/interfaces/index.ts](/src/authentication/interfaces/index.ts) | TypeScript | 2 | 0 | 1 | 3 |
+| [src/authentication/interfaces/request-with-user.interface.ts](/src/authentication/interfaces/request-with-user.interface.ts) | TypeScript | 5 | 0 | 2 | 7 |
+| [src/authentication/interfaces/token-payload.interface.ts](/src/authentication/interfaces/token-payload.interface.ts) | TypeScript | 3 | 0 | 1 | 4 |
+| [src/authentication/providers/authentication.provider.ts](/src/authentication/providers/authentication.provider.ts) | TypeScript | 12 | 0 | 4 | 16 |
+| [src/authentication/providers/index.ts](/src/authentication/providers/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/authentication/repositories/authentication.repository.spec.ts](/src/authentication/repositories/authentication.repository.spec.ts) | TypeScript | 28 | 0 | 6 | 34 |
+| [src/authentication/repositories/authentication.repository.ts](/src/authentication/repositories/authentication.repository.ts) | TypeScript | 5 | 0 | 2 | 7 |
+| [src/authentication/repositories/index.ts](/src/authentication/repositories/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/authentication/services/authentication.service.spec.ts](/src/authentication/services/authentication.service.spec.ts) | TypeScript | 98 | 0 | 15 | 113 |
+| [src/authentication/services/authentication.service.ts](/src/authentication/services/authentication.service.ts) | TypeScript | 94 | 3 | 20 | 117 |
+| [src/authentication/services/index.ts](/src/authentication/services/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/authentication/strategies/index.ts](/src/authentication/strategies/index.ts) | TypeScript | 2 | 0 | 1 | 3 |
+| [src/authentication/strategies/jwt.strategy.ts](/src/authentication/strategies/jwt.strategy.ts) | TypeScript | 32 | 3 | 5 | 40 |
+| [src/authentication/strategies/local.strategy.ts](/src/authentication/strategies/local.strategy.ts) | TypeScript | 17 | 0 | 2 | 19 |
+| [src/authentication/subscribers/authentication.subscriber.ts](/src/authentication/subscribers/authentication.subscriber.ts) | TypeScript | 41 | 0 | 6 | 47 |
+| [src/authentication/subscribers/index.ts](/src/authentication/subscribers/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/common/constants/index.ts](/src/common/constants/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/common/constants/oder.constant.ts](/src/common/constants/oder.constant.ts) | TypeScript | 4 | 0 | 1 | 5 |
+| [src/common/decorators/api-paginated-response.decorator.ts](/src/common/decorators/api-paginated-response.decorator.ts) | TypeScript | 26 | 0 | 2 | 28 |
+| [src/common/decorators/index.ts](/src/common/decorators/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/common/dtos/abstract.dto.ts](/src/common/dtos/abstract.dto.ts) | TypeScript | 5 | 0 | 2 | 7 |
+| [src/common/dtos/index.ts](/src/common/dtos/index.ts) | TypeScript | 4 | 0 | 1 | 5 |
+| [src/common/dtos/page-meta.dto.ts](/src/common/dtos/page-meta.dto.ts) | TypeScript | 24 | 0 | 8 | 32 |
+| [src/common/dtos/page-options.dto.ts](/src/common/dtos/page-options.dto.ts) | TypeScript | 33 | 0 | 5 | 38 |
+| [src/common/dtos/page.dto.ts](/src/common/dtos/page.dto.ts) | TypeScript | 14 | 0 | 4 | 18 |
+| [src/common/entities/abstract.entity.ts](/src/common/entities/abstract.entity.ts) | TypeScript | 22 | 0 | 5 | 27 |
+| [src/common/entities/index.ts](/src/common/entities/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/common/interceptors/http-cache.interceptor.ts](/src/common/interceptors/http-cache.interceptor.ts) | TypeScript | 20 | 0 | 4 | 24 |
+| [src/common/interceptors/index.ts](/src/common/interceptors/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/common/interfaces/index.ts](/src/common/interfaces/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/common/interfaces/page-meta-dto-parameters.interface.ts](/src/common/interfaces/page-meta-dto-parameters.interface.ts) | TypeScript | 5 | 0 | 2 | 7 |
+| [src/database/constraints/errors.constraint.ts](/src/database/constraints/errors.constraint.ts) | TypeScript | 3 | 0 | 1 | 4 |
+| [src/database/constraints/index.ts](/src/database/constraints/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/database/index.ts](/src/database/index.ts) | TypeScript | 30 | 0 | 2 | 32 |
+| [src/database/strategies/index.ts](/src/database/strategies/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/database/strategies/snake-naming.strategy.ts](/src/database/strategies/snake-naming.strategy.ts) | TypeScript | 55 | 0 | 8 | 63 |
+| [src/geolocation/constants/geolocation.constant.ts](/src/geolocation/constants/geolocation.constant.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/geolocation/constants/index.ts](/src/geolocation/constants/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/geolocation/controllers/geolocation.controller.spec.ts](/src/geolocation/controllers/geolocation.controller.spec.ts) | TypeScript | 78 | 0 | 7 | 85 |
+| [src/geolocation/controllers/geolocation.controller.ts](/src/geolocation/controllers/geolocation.controller.ts) | TypeScript | 76 | 0 | 5 | 81 |
+| [src/geolocation/controllers/index.ts](/src/geolocation/controllers/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/geolocation/dtos/create-geolocation.dto.ts](/src/geolocation/dtos/create-geolocation.dto.ts) | TypeScript | 5 | 0 | 2 | 7 |
+| [src/geolocation/dtos/geolocation.dto.ts](/src/geolocation/dtos/geolocation.dto.ts) | TypeScript | 34 | 0 | 15 | 49 |
+| [src/geolocation/dtos/index.ts](/src/geolocation/dtos/index.ts) | TypeScript | 5 | 0 | 1 | 6 |
+| [src/geolocation/dtos/language.dto.ts](/src/geolocation/dtos/language.dto.ts) | TypeScript | 9 | 0 | 4 | 13 |
+| [src/geolocation/dtos/location.dto.ts](/src/geolocation/dtos/location.dto.ts) | TypeScript | 20 | 0 | 9 | 29 |
+| [src/geolocation/dtos/remove-geolocation.dto.ts](/src/geolocation/dtos/remove-geolocation.dto.ts) | TypeScript | 5 | 0 | 2 | 7 |
+| [src/geolocation/entities/geolocation.entity.ts](/src/geolocation/entities/geolocation.entity.ts) | TypeScript | 39 | 0 | 13 | 52 |
+| [src/geolocation/entities/index.ts](/src/geolocation/entities/index.ts) | TypeScript | 4 | 0 | 1 | 5 |
+| [src/geolocation/entities/language.entity.ts](/src/geolocation/entities/language.entity.ts) | TypeScript | 17 | 0 | 5 | 22 |
+| [src/geolocation/entities/location-language.entity.ts](/src/geolocation/entities/location-language.entity.ts) | TypeScript | 24 | 0 | 3 | 27 |
+| [src/geolocation/entities/location.entity.ts](/src/geolocation/entities/location.entity.ts) | TypeScript | 33 | 0 | 11 | 44 |
+| [src/geolocation/exceptions/geolocation-not-founded.exception.ts](/src/geolocation/exceptions/geolocation-not-founded.exception.ts) | TypeScript | 6 | 0 | 2 | 8 |
+| [src/geolocation/exceptions/geolocation-was-created.exception.ts](/src/geolocation/exceptions/geolocation-was-created.exception.ts) | TypeScript | 6 | 0 | 2 | 8 |
+| [src/geolocation/exceptions/index.ts](/src/geolocation/exceptions/index.ts) | TypeScript | 2 | 0 | 1 | 3 |
+| [src/geolocation/index.ts](/src/geolocation/index.ts) | TypeScript | 45 | 0 | 2 | 47 |
+| [src/geolocation/repositories/geolocation.repository.spec.ts](/src/geolocation/repositories/geolocation.repository.spec.ts) | TypeScript | 28 | 0 | 6 | 34 |
+| [src/geolocation/repositories/geolocation.repository.ts](/src/geolocation/repositories/geolocation.repository.ts) | TypeScript | 5 | 0 | 2 | 7 |
+| [src/geolocation/repositories/index.ts](/src/geolocation/repositories/index.ts) | TypeScript | 4 | 0 | 1 | 5 |
+| [src/geolocation/repositories/language.repository.spec.ts](/src/geolocation/repositories/language.repository.spec.ts) | TypeScript | 28 | 0 | 6 | 34 |
+| [src/geolocation/repositories/language.repository.ts](/src/geolocation/repositories/language.repository.ts) | TypeScript | 5 | 0 | 2 | 7 |
+| [src/geolocation/repositories/location-language.repository.spec.ts](/src/geolocation/repositories/location-language.repository.spec.ts) | TypeScript | 28 | 0 | 6 | 34 |
+| [src/geolocation/repositories/location-language.repository.ts](/src/geolocation/repositories/location-language.repository.ts) | TypeScript | 5 | 0 | 2 | 7 |
+| [src/geolocation/repositories/location.repository.spec.ts](/src/geolocation/repositories/location.repository.spec.ts) | TypeScript | 28 | 0 | 6 | 34 |
+| [src/geolocation/repositories/location.repository.ts](/src/geolocation/repositories/location.repository.ts) | TypeScript | 5 | 0 | 2 | 7 |
+| [src/geolocation/services/cache.service.spec.ts](/src/geolocation/services/cache.service.spec.ts) | TypeScript | 21 | 0 | 5 | 26 |
+| [src/geolocation/services/cache.service.ts](/src/geolocation/services/cache.service.ts) | TypeScript | 15 | 0 | 4 | 19 |
+| [src/geolocation/services/client.service.spec.ts](/src/geolocation/services/client.service.spec.ts) | TypeScript | 17 | 0 | 5 | 22 |
+| [src/geolocation/services/client.service.ts](/src/geolocation/services/client.service.ts) | TypeScript | 28 | 0 | 8 | 36 |
+| [src/geolocation/services/geolocation.service.spec.ts](/src/geolocation/services/geolocation.service.spec.ts) | TypeScript | 55 | 0 | 5 | 60 |
+| [src/geolocation/services/geolocation.service.ts](/src/geolocation/services/geolocation.service.ts) | TypeScript | 166 | 0 | 38 | 204 |
+| [src/geolocation/services/index.ts](/src/geolocation/services/index.ts) | TypeScript | 6 | 0 | 1 | 7 |
+| [src/geolocation/services/language.service.spec.ts](/src/geolocation/services/language.service.spec.ts) | TypeScript | 22 | 0 | 5 | 27 |
+| [src/geolocation/services/language.service.ts](/src/geolocation/services/language.service.ts) | TypeScript | 66 | 0 | 18 | 84 |
+| [src/geolocation/services/location-language.service.spec.ts](/src/geolocation/services/location-language.service.spec.ts) | TypeScript | 24 | 0 | 5 | 29 |
+| [src/geolocation/services/location-language.service.ts](/src/geolocation/services/location-language.service.ts) | TypeScript | 50 | 0 | 12 | 62 |
+| [src/geolocation/services/location.service.spec.ts](/src/geolocation/services/location.service.spec.ts) | TypeScript | 22 | 0 | 5 | 27 |
+| [src/geolocation/services/location.service.ts](/src/geolocation/services/location.service.ts) | TypeScript | 40 | 0 | 9 | 49 |
+| [src/geolocation/subscribers/geolocation.subscriber.ts](/src/geolocation/subscribers/geolocation.subscriber.ts) | TypeScript | 27 | 0 | 5 | 32 |
+| [src/geolocation/subscribers/index.ts](/src/geolocation/subscribers/index.ts) | TypeScript | 2 | 0 | 1 | 3 |
+| [src/geolocation/subscribers/location.subscriber.ts](/src/geolocation/subscribers/location.subscriber.ts) | TypeScript | 24 | 0 | 4 | 28 |
+| [src/main.ts](/src/main.ts) | TypeScript | 28 | 0 | 7 | 35 |
+| [src/user/dtos/index.ts](/src/user/dtos/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/user/dtos/user.dto.ts](/src/user/dtos/user.dto.ts) | TypeScript | 7 | 0 | 2 | 9 |
+| [src/user/entities/index.ts](/src/user/entities/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/user/entities/user.entity.ts](/src/user/entities/user.entity.ts) | TypeScript | 19 | 0 | 3 | 22 |
+| [src/user/index.ts](/src/user/index.ts) | TypeScript | 10 | 0 | 2 | 12 |
+| [src/user/repositories/index.ts](/src/user/repositories/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/user/repositories/user.repository.spec.ts](/src/user/repositories/user.repository.spec.ts) | TypeScript | 28 | 0 | 6 | 34 |
+| [src/user/repositories/user.repository.ts](/src/user/repositories/user.repository.ts) | TypeScript | 5 | 0 | 2 | 7 |
+| [src/user/services/index.ts](/src/user/services/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/user/services/user.service.spec.ts](/src/user/services/user.service.spec.ts) | TypeScript | 42 | 0 | 5 | 47 |
+| [src/user/services/user.service.ts](/src/user/services/user.service.ts) | TypeScript | 31 | 0 | 9 | 40 |
+| [src/util/index.ts](/src/util/index.ts) | TypeScript | 1 | 0 | 1 | 2 |
+| [src/util/mocks/config.service.ts](/src/util/mocks/config.service.ts) | TypeScript | 22 | 0 | 1 | 23 |
+| [src/util/mocks/connection.ts](/src/util/mocks/connection.ts) | TypeScript | 5 | 0 | 1 | 6 |
+| [src/util/mocks/index.ts](/src/util/mocks/index.ts) | TypeScript | 4 | 0 | 1 | 5 |
+| [src/util/mocks/jwt.service.ts](/src/util/mocks/jwt.service.ts) | TypeScript | 3 | 0 | 1 | 4 |
+| [src/util/mocks/user.mock.ts](/src/util/mocks/user.mock.ts) | TypeScript | 18 | 0 | 2 | 20 |
+| [src/util/setup-swagger.util.ts](/src/util/setup-swagger.util.ts) | TypeScript | 21 | 0 | 3 | 24 |
+
+[summary](results.md)

@@ -15,6 +15,8 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   const PORT = +configService.get<number>('PORT');
 
+  app.enableCors({ credentials: true, origin: 'http://localhost:3000' });
+
   app.use(cookieParser());
   app.use(helmet());
   app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 200 }));

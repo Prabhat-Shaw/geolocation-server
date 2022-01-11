@@ -58,6 +58,8 @@ export class GeolocationService {
   ): Promise<GeolocationEntity> {
     const geolocationData = await this._clientService.getData(ip_address);
 
+    console.log('geolocationData', geolocationData);
+
     return this._saveData(geolocationData, user);
   }
 
@@ -118,6 +120,8 @@ export class GeolocationService {
     user: UserEntity,
   ): Promise<GeolocationEntity> {
     const geolocation = await this._getGeolocation({ ip: geolocationDto.ip });
+
+    console.log('geolocation', geolocation);
 
     if (geolocation) {
       throw new GeolocationWasCreatedException();

@@ -1,0 +1,185 @@
+Date : 2022-01-03 03:00:00
+Directory : /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src
+Total : 121 files,  2254 codes, 6 comments, 476 blanks, all 2736 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| TypeScript |        121 |      2,254 |          6 |        476 |      2,736 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                               | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                  |        121 |      2,254 |          6 |        476 |      2,736 |
+| app                                                                                                                                |          1 |         31 |          0 |          2 |         33 |
+| authentication                                                                                                                     |         36 |        591 |          6 |        121 |        718 |
+| authentication/controllers                                                                                                         |          3 |        125 |          0 |         16 |        141 |
+| authentication/decorators                                                                                                          |          2 |         11 |          0 |          3 |         14 |
+| authentication/dtos                                                                                                                |          5 |         27 |          0 |         10 |         37 |
+| authentication/entities                                                                                                            |          2 |         16 |          0 |          5 |         21 |
+| authentication/exceptions                                                                                                          |          2 |          7 |          0 |          3 |         10 |
+| authentication/guards                                                                                                              |          5 |         30 |          0 |         13 |         43 |
+| authentication/interfaces                                                                                                          |          3 |         10 |          0 |          4 |         14 |
+| authentication/providers                                                                                                           |          2 |         13 |          0 |          5 |         18 |
+| authentication/repositories                                                                                                        |          3 |         34 |          0 |          9 |         43 |
+| authentication/services                                                                                                            |          3 |        193 |          3 |         36 |        232 |
+| authentication/strategies                                                                                                          |          3 |         51 |          3 |          8 |         62 |
+| authentication/subscribers                                                                                                         |          2 |         42 |          0 |          7 |         49 |
+| common                                                                                                                             |         15 |        162 |          0 |         39 |        201 |
+| common/constants                                                                                                                   |          2 |          5 |          0 |          2 |          7 |
+| common/decorators                                                                                                                  |          2 |         27 |          0 |          3 |         30 |
+| common/dtos                                                                                                                        |          5 |         80 |          0 |         20 |        100 |
+| common/entities                                                                                                                    |          2 |         23 |          0 |          6 |         29 |
+| common/interceptors                                                                                                                |          2 |         21 |          0 |          5 |         26 |
+| common/interfaces                                                                                                                  |          2 |          6 |          0 |          3 |          9 |
+| database                                                                                                                           |          5 |         90 |          0 |         13 |        103 |
+| database/constraints                                                                                                               |          2 |          4 |          0 |          2 |          6 |
+| database/strategies                                                                                                                |          2 |         56 |          0 |          9 |         65 |
+| geolocation                                                                                                                        |         45 |      1,132 |          0 |        251 |      1,383 |
+| geolocation/constants                                                                                                              |          2 |          2 |          0 |          2 |          4 |
+| geolocation/controllers                                                                                                            |          3 |        155 |          0 |         13 |        168 |
+| geolocation/dtos                                                                                                                   |          6 |         78 |          0 |         33 |        111 |
+| geolocation/entities                                                                                                               |          5 |        117 |          0 |         33 |        150 |
+| geolocation/exceptions                                                                                                             |          3 |         14 |          0 |          5 |         19 |
+| geolocation/repositories                                                                                                           |          9 |        136 |          0 |         33 |        169 |
+| geolocation/services                                                                                                               |         13 |        532 |          0 |        120 |        652 |
+| geolocation/subscribers                                                                                                            |          3 |         53 |          0 |         10 |         63 |
+| user                                                                                                                               |         11 |        146 |          0 |         33 |        179 |
+| user/dtos                                                                                                                          |          2 |          8 |          0 |          3 |         11 |
+| user/entities                                                                                                                      |          2 |         20 |          0 |          4 |         24 |
+| user/repositories                                                                                                                  |          3 |         34 |          0 |          9 |         43 |
+| user/services                                                                                                                      |          3 |         74 |          0 |         15 |         89 |
+| util                                                                                                                               |          7 |         74 |          0 |         10 |         84 |
+| util/mocks                                                                                                                         |          5 |         52 |          0 |          6 |         58 |
++------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                           | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/app/index.ts                                                      | TypeScript |         31 |          0 |          2 |         33 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/controllers/authentication.controller.spec.ts      | TypeScript |         72 |          0 |          8 |         80 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/controllers/authentication.controller.ts           | TypeScript |         52 |          0 |          7 |         59 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/controllers/index.ts                               | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/decorators/authorization.decorator.ts              | TypeScript |         10 |          0 |          2 |         12 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/decorators/index.ts                                | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/dtos/authentication.dto.ts                         | TypeScript |          6 |          0 |          2 |          8 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/dtos/create-authentication.dto.ts                  | TypeScript |         13 |          0 |          3 |         16 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/dtos/index.ts                                      | TypeScript |          4 |          0 |          1 |          5 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/dtos/login.dto.ts                                  | TypeScript |          2 |          0 |          2 |          4 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/dtos/registration.dto.ts                           | TypeScript |          2 |          0 |          2 |          4 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/entities/authentication.entity.ts                  | TypeScript |         15 |          0 |          4 |         19 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/entities/index.ts                                  | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/exceptions/index.ts                                | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/exceptions/wrong-credentials-provided.exception.ts | TypeScript |          6 |          0 |          2 |          8 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/guards/index.ts                                    | TypeScript |          2 |          0 |          1 |          3 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/guards/jwt-authentication.guard.spec.ts            | TypeScript |         10 |          0 |          4 |         14 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/guards/jwt-authentication.guard.ts                 | TypeScript |          4 |          0 |          2 |          6 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/guards/local-authentication.guard.spec.ts          | TypeScript |         10 |          0 |          4 |         14 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/guards/local-authentication.guard.ts               | TypeScript |          4 |          0 |          2 |          6 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/index.ts                                           | TypeScript |         32 |          0 |          2 |         34 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/interfaces/index.ts                                | TypeScript |          2 |          0 |          1 |          3 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/interfaces/request-with-user.interface.ts          | TypeScript |          5 |          0 |          2 |          7 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/interfaces/token-payload.interface.ts              | TypeScript |          3 |          0 |          1 |          4 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/providers/authentication.provider.ts               | TypeScript |         12 |          0 |          4 |         16 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/providers/index.ts                                 | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/repositories/authentication.repository.spec.ts     | TypeScript |         28 |          0 |          6 |         34 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/repositories/authentication.repository.ts          | TypeScript |          5 |          0 |          2 |          7 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/repositories/index.ts                              | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/services/authentication.service.spec.ts            | TypeScript |         98 |          0 |         15 |        113 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/services/authentication.service.ts                 | TypeScript |         94 |          3 |         20 |        117 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/services/index.ts                                  | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/strategies/index.ts                                | TypeScript |          2 |          0 |          1 |          3 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/strategies/jwt.strategy.ts                         | TypeScript |         32 |          3 |          5 |         40 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/strategies/local.strategy.ts                       | TypeScript |         17 |          0 |          2 |         19 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/subscribers/authentication.subscriber.ts           | TypeScript |         41 |          0 |          6 |         47 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/authentication/subscribers/index.ts                               | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/common/constants/index.ts                                         | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/common/constants/oder.constant.ts                                 | TypeScript |          4 |          0 |          1 |          5 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/common/decorators/api-paginated-response.decorator.ts             | TypeScript |         26 |          0 |          2 |         28 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/common/decorators/index.ts                                        | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/common/dtos/abstract.dto.ts                                       | TypeScript |          5 |          0 |          2 |          7 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/common/dtos/index.ts                                              | TypeScript |          4 |          0 |          1 |          5 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/common/dtos/page-meta.dto.ts                                      | TypeScript |         24 |          0 |          8 |         32 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/common/dtos/page-options.dto.ts                                   | TypeScript |         33 |          0 |          5 |         38 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/common/dtos/page.dto.ts                                           | TypeScript |         14 |          0 |          4 |         18 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/common/entities/abstract.entity.ts                                | TypeScript |         22 |          0 |          5 |         27 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/common/entities/index.ts                                          | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/common/interceptors/http-cache.interceptor.ts                     | TypeScript |         20 |          0 |          4 |         24 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/common/interceptors/index.ts                                      | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/common/interfaces/index.ts                                        | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/common/interfaces/page-meta-dto-parameters.interface.ts           | TypeScript |          5 |          0 |          2 |          7 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/database/constraints/errors.constraint.ts                         | TypeScript |          3 |          0 |          1 |          4 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/database/constraints/index.ts                                     | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/database/index.ts                                                 | TypeScript |         30 |          0 |          2 |         32 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/database/strategies/index.ts                                      | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/database/strategies/snake-naming.strategy.ts                      | TypeScript |         55 |          0 |          8 |         63 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/constants/geolocation.constant.ts                     | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/constants/index.ts                                    | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/controllers/geolocation.controller.spec.ts            | TypeScript |         78 |          0 |          7 |         85 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/controllers/geolocation.controller.ts                 | TypeScript |         76 |          0 |          5 |         81 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/controllers/index.ts                                  | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/dtos/create-geolocation.dto.ts                        | TypeScript |          5 |          0 |          2 |          7 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/dtos/geolocation.dto.ts                               | TypeScript |         34 |          0 |         15 |         49 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/dtos/index.ts                                         | TypeScript |          5 |          0 |          1 |          6 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/dtos/language.dto.ts                                  | TypeScript |          9 |          0 |          4 |         13 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/dtos/location.dto.ts                                  | TypeScript |         20 |          0 |          9 |         29 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/dtos/remove-geolocation.dto.ts                        | TypeScript |          5 |          0 |          2 |          7 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/entities/geolocation.entity.ts                        | TypeScript |         39 |          0 |         13 |         52 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/entities/index.ts                                     | TypeScript |          4 |          0 |          1 |          5 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/entities/language.entity.ts                           | TypeScript |         17 |          0 |          5 |         22 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/entities/location-language.entity.ts                  | TypeScript |         24 |          0 |          3 |         27 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/entities/location.entity.ts                           | TypeScript |         33 |          0 |         11 |         44 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/exceptions/geolocation-not-founded.exception.ts       | TypeScript |          6 |          0 |          2 |          8 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/exceptions/geolocation-was-created.exception.ts       | TypeScript |          6 |          0 |          2 |          8 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/exceptions/index.ts                                   | TypeScript |          2 |          0 |          1 |          3 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/index.ts                                              | TypeScript |         45 |          0 |          2 |         47 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/repositories/geolocation.repository.spec.ts           | TypeScript |         28 |          0 |          6 |         34 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/repositories/geolocation.repository.ts                | TypeScript |          5 |          0 |          2 |          7 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/repositories/index.ts                                 | TypeScript |          4 |          0 |          1 |          5 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/repositories/language.repository.spec.ts              | TypeScript |         28 |          0 |          6 |         34 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/repositories/language.repository.ts                   | TypeScript |          5 |          0 |          2 |          7 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/repositories/location-language.repository.spec.ts     | TypeScript |         28 |          0 |          6 |         34 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/repositories/location-language.repository.ts          | TypeScript |          5 |          0 |          2 |          7 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/repositories/location.repository.spec.ts              | TypeScript |         28 |          0 |          6 |         34 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/repositories/location.repository.ts                   | TypeScript |          5 |          0 |          2 |          7 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/services/cache.service.spec.ts                        | TypeScript |         21 |          0 |          5 |         26 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/services/cache.service.ts                             | TypeScript |         15 |          0 |          4 |         19 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/services/client.service.spec.ts                       | TypeScript |         17 |          0 |          5 |         22 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/services/client.service.ts                            | TypeScript |         28 |          0 |          8 |         36 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/services/geolocation.service.spec.ts                  | TypeScript |         55 |          0 |          5 |         60 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/services/geolocation.service.ts                       | TypeScript |        166 |          0 |         38 |        204 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/services/index.ts                                     | TypeScript |          6 |          0 |          1 |          7 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/services/language.service.spec.ts                     | TypeScript |         22 |          0 |          5 |         27 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/services/language.service.ts                          | TypeScript |         66 |          0 |         18 |         84 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/services/location-language.service.spec.ts            | TypeScript |         24 |          0 |          5 |         29 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/services/location-language.service.ts                 | TypeScript |         50 |          0 |         12 |         62 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/services/location.service.spec.ts                     | TypeScript |         22 |          0 |          5 |         27 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/services/location.service.ts                          | TypeScript |         40 |          0 |          9 |         49 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/subscribers/geolocation.subscriber.ts                 | TypeScript |         27 |          0 |          5 |         32 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/subscribers/index.ts                                  | TypeScript |          2 |          0 |          1 |          3 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/geolocation/subscribers/location.subscriber.ts                    | TypeScript |         24 |          0 |          4 |         28 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/main.ts                                                           | TypeScript |         28 |          0 |          7 |         35 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/user/dtos/index.ts                                                | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/user/dtos/user.dto.ts                                             | TypeScript |          7 |          0 |          2 |          9 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/user/entities/index.ts                                            | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/user/entities/user.entity.ts                                      | TypeScript |         19 |          0 |          3 |         22 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/user/index.ts                                                     | TypeScript |         10 |          0 |          2 |         12 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/user/repositories/index.ts                                        | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/user/repositories/user.repository.spec.ts                         | TypeScript |         28 |          0 |          6 |         34 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/user/repositories/user.repository.ts                              | TypeScript |          5 |          0 |          2 |          7 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/user/services/index.ts                                            | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/user/services/user.service.spec.ts                                | TypeScript |         42 |          0 |          5 |         47 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/user/services/user.service.ts                                     | TypeScript |         31 |          0 |          9 |         40 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/util/index.ts                                                     | TypeScript |          1 |          0 |          1 |          2 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/util/mocks/config.service.ts                                      | TypeScript |         22 |          0 |          1 |         23 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/util/mocks/connection.ts                                          | TypeScript |          5 |          0 |          1 |          6 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/util/mocks/index.ts                                               | TypeScript |          4 |          0 |          1 |          5 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/util/mocks/jwt.service.ts                                         | TypeScript |          3 |          0 |          1 |          4 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/util/mocks/user.mock.ts                                           | TypeScript |         18 |          0 |          2 |         20 |
+| /Users/pietrzakadrian/Desktop/Code/_playground/nestjs-sofomo/src/util/setup-swagger.util.ts                                        | TypeScript |         21 |          0 |          3 |         24 |
+| Total                                                                                                                              |            |      2,254 |          6 |        476 |      2,736 |
++------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

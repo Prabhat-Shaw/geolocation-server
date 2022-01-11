@@ -1,6 +1,6 @@
-import { BadRequestException } from '@nestjs/common';
+import { UnauthorizedException } from '@nestjs/common';
 
-export class WrongCredentialsProvidedException extends BadRequestException {
+export class WrongCredentialsProvidedException extends UnauthorizedException {
   constructor(error?: string) {
     super('Wrong credentials provided', error);
   }

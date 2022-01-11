@@ -19,8 +19,6 @@ import { UserModule } from 'src/user';
         POSTGRES_DB: Joi.string().required(),
         JWT_SECRET: Joi.string().required(),
         JWT_EXPIRATION_TIME: Joi.string().required(),
-        PGADMIN_DEFAULT_EMAIL: Joi.string(),
-        PGADMIN_DEFAULT_PASSWORD: Joi.string(),
       }),
     }),
     DatabaseModule,

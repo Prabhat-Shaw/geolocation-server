@@ -17,8 +17,6 @@
 
 ## Installation
 
-- the first option using the docker
-
 ```bash
 # 1. Clone the application repository
 git clone https://github.com/pietrzakadrian/geolocation-server
@@ -33,31 +31,9 @@ cp .env.example .env
 docker-compose up
 ```
 
-- the second option using the yarn package manager
-
-```bash
-# 1. Clone the application repository
-git clone https://github.com/pietrzakadrian/geolocation-server
-
-# 2. Enter the application directory
-cd geolocation-server
-
-# 3. Install required npm packages
-yarn
-
-# 4. Edit the environment variables
-cp .env.example .env
-
-# 5. Build the required dependencies
-docker-compose up
-
-# 6. Run application
-yarn start
-```
-
 ## Documentation
 
-- documentation is available at URL `/documentation`.
+- documentation is available at URL (/documentation)[https://geolocation.pietrzakadrian.com/documentation/].
 
 ## Processes that can be improved
 

@@ -33,7 +33,7 @@ docker-compose up
 
 ## Documentation
 
-- documentation is available at URL (/documentation)[https://geolocation.pietrzakadrian.com/documentation/].
+- documentation is available at URL [/documentation](https://geolocation.pietrzakadrian.com/documentation/).
 
 ## Processes that can be improved
 

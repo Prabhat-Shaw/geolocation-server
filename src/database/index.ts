@@ -19,13 +19,10 @@ import { SnakeNamingStrategy } from './strategies';
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
         subscribers: [AuthenticationSubscriber],
         namingStrategy: new SnakeNamingStrategy(),
-        synchronize: process.env.NODE_ENV == 'development',
-        logging: process.env.NODE_ENV === 'development',
+        synchronize: true,
+        logging: true,
         extra: {
           charset: 'utf8mb4_unicode_ci',
-        },
-        ssl: {
-          rejectUnauthorized: false,
         },
       }),
     }),

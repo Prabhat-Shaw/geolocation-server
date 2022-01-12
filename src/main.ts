@@ -15,7 +15,10 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   const PORT = +configService.get<number>('PORT');
 
-  app.enableCors({ credentials: true, origin: 'http://localhost:3000' });
+  app.enableCors({
+    credentials: true,
+    origin: 'https://geolocation-client.herokuapp.com/',
+  });
 
   app.use(cookieParser());
   app.use(helmet());
